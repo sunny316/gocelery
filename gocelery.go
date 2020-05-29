@@ -78,7 +78,7 @@ func (cc *CeleryClient) DelayKwargs(task string, args map[string]interface{}) (*
 }
 
 // DelayKwargs gets asynchronous results with argument map and arguments
-func (cc *CeleryClient) DelayArgsKwargs(task string, kwargs map[string]interface{}, args ...interface{}) (*AsyncResult, error) {
+func (cc *CeleryClient) DelayKwargsArgs(task string, kwargs map[string]interface{}, args ...interface{}) (*AsyncResult, error) {
 	celeryTask := getTaskMessage(task)
 	if len(kwargs) > 0 {
 		celeryTask.Kwargs = kwargs
